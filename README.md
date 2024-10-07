@@ -6,6 +6,7 @@ pip install -U bitsandbytes accelerate transformers datasets peft mlflow
 ```
 
 ### Files:
-- `src/pre_train.py` - Pre-training with FSDP, QLoRA    
-- `src/fine-tune.py` - Fine-tuning with FSDP, QLoRA
+- `src/pretrain.py` - Pre-training with FSDP, LoRA    
+- `src/finetune.py` - Fine-tuning with FSDP, LoRA
 - `src/rlhf.py` - Training with RLHF
+- `src/inference.py` - Inference using trained model

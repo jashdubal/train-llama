@@ -12,7 +12,6 @@ from datasets import Dataset
 from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from accelerate import Accelerator, FullyShardedDataParallelPlugin
 from kaggle_secrets import UserSecretsClient
-from torch.distributed.fsdp.wrap import transformer_auto_wrap_policy
 
 # Setup secrets and paths
 user_secrets = UserSecretsClient()
@@ -51,8 +50,7 @@ train_dataloader = DataLoader(dataset_tokenized, batch_size=1, num_workers=0)
 
 # Initialize FSDP plugin and Accelerator
 fsdp_plugin = FullyShardedDataParallelPlugin(
-    sharding_strategy="FULL_SHARD",
-    auto_wrap_policy=transformer_auto_wrap_policy
+    sharding_strategy="FULL_SHARD"
 )
 accelerator = Accelerator(mixed_precision="fp16", fsdp_plugin=fsdp_plugin)
 

@@ -11,13 +11,14 @@ from transformers import (
 from datasets import Dataset
 from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
 from accelerate import Accelerator, FullyShardedDataParallelPlugin
+from kaggle_secrets import UserSecretsClient
+
+user_secrets = UserSecretsClient()
+access_token = user_secrets.get_secret("HF_TOKEN")
 
 # Model and dataset paths
 MODEL_PATH = "meta-llama/Llama-3.2-1B"
 DATASET_PATH = '/kaggle/input/runescape-corpus/runescape_corpus.txt'  # Adjust the path if necessary
-
-# Replace with your Hugging Face access token
-access_token = "your_huggingface_token"
 
 # Function to load the dataset
 def load_dataset(path):

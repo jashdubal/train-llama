@@ -2,7 +2,7 @@
 
 ### Dependencies:
 ```bash
-pip install -U bitsandbytes accelerate transformers datasets peft mlflow
+pip install -U bitsandbytes accelerate transformers datasets peft mlflow safetensors
 ```
 
 ### Files:

@@ -2,10 +2,11 @@
 
 ### Dependencies:
 ```bash
-pip install -U bitsandbytes accelerate transformers datasets peft mlflow
+pip install -U bitsandbytes accelerate transformers datasets peft mlflow safetensors
 ```
 
 ### Files:
-- `src/pre_train.py` - Pre-training with FSDP, QLoRA    
-- `src/fine-tune.py` - Fine-tuning with FSDP, QLoRA
-- `src/rlhf.py` - Training with RLHF
+- [`src/pretrain.py`](src/pretrain.py) - Pre-training with FSDP, LoRA  
+- [`src/finetune.py`](src/finetune.py) - Fine-tuning with FSDP, LoRA  
+- [`src/rlhf.py`](src/rlhf.py) - Training with RLHF  
+- [`src/inference.py`](src/inference.py) - Inference using trained model
